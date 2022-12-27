@@ -9,7 +9,8 @@
     "export": "next build && next export && next-export-optimize-images",
     "lint": "next lint --dir src",
     "lint:fix": "yarn lint --fix",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@next/font": "13.1.1",
@@ -25,7 +26,15 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
     "next-export-optimize-images": "^2.0.0",
     "prettier": "^2.8.1"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --cache --cache-location .next/cache/eslint/ --fix",
+      "yarn format"
+    ]
   }
 }
