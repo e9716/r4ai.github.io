@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.1.0",
     "next-export-optimize-images": "^2.0.0",
