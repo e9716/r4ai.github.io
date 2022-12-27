@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next build && next export && next-export-optimize-images",
     "lint": "next lint"
   },
   "dependencies": {
@@ -19,5 +20,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "next-export-optimize-images": "^2.0.0"
   }
 }
