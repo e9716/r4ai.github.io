@@ -16,7 +16,7 @@ export const Header: FC<HeaderProps> = () => {
         <Flex w='600px'>
           <HStack spacing={5}>
             <HeaderLink href='/'>Home</HeaderLink>
-            <HeaderLink href='/blog'>Blog</HeaderLink>
+            <HeaderLink href='/posts'>Blog</HeaderLink>
           </HStack>
           <Spacer />
           <IconButton
