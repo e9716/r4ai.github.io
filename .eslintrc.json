@@ -1,6 +1,14 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:import/recommended", "plugin:import/warnings", "prettier"],
-  "plugins": ["unused-imports"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:import/recommended",
+    "plugin:import/warnings",
+    "prettier",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:unused-imports/recommended"
+  ],
+  "plugins": ["react-hooks", "jsx-a11y", "import", "unused-imports"],
   "rules": {
     "import/order": [
       "error",
