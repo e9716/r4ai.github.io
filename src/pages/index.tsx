@@ -1,6 +1,20 @@
-import { Heading } from '@chakra-ui/react'
+import {
+  Container,
+  Divider,
+  Heading,
+  HStack,
+  Link,
+  ListItem,
+  Spacer,
+  Text,
+  UnorderedList,
+  VStack,
+} from '@chakra-ui/react'
 import { Inter } from '@next/font/google'
 import Head from 'next/head'
+import NextLink from 'next/link'
+
+import { Header } from '@/components/common/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,8 +27,64 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <Header />
       <main>
-        <Heading as='h1'> Hello, World! </Heading>
+        <HStack>
+          <Spacer />
+          <Container w='600px'>
+            <VStack spacing={8}>
+              <Container>
+                <Heading as='h1'>Rai</Heading>
+                <Divider />
+                <Text as='p'>
+                  I&apos;m a student at the Tokyo University of Science, majoring in Information Science.
+                </Text>
+              </Container>
+              <Container>
+                <Heading as='h2'>Programming</Heading>
+                <Divider />
+                <Container>
+                  <UnorderedList>
+                    <ListItem>Python</ListItem>
+                    <ListItem>Rust</ListItem>
+                    <ListItem>Typescript</ListItem>
+                  </UnorderedList>
+                </Container>
+              </Container>
+              <Container>
+                <Heading as='h2'>Interests</Heading>
+                <Divider />
+                <Container>
+                  <UnorderedList>
+                    <ListItem>Tauri</ListItem>
+                    <ListItem>WebAssembly</ListItem>
+                    <ListItem>Compiler</ListItem>
+                    <ListItem>3DCG</ListItem>
+                  </UnorderedList>
+                </Container>
+              </Container>
+              <Container>
+                <Heading as='h2'>Links</Heading>
+                <Divider />
+                <Container>
+                  <UnorderedList>
+                    <ListItem>
+                      <Link as={NextLink} href='https://github.com/r4ai'>
+                        GitHub
+                      </Link>
+                    </ListItem>
+                    <ListItem>
+                      <Link as={NextLink} href='https://zenn.dev/t4aru'>
+                        Zenn
+                      </Link>
+                    </ListItem>
+                  </UnorderedList>
+                </Container>
+              </Container>
+            </VStack>
+          </Container>
+          <Spacer />
+        </HStack>
       </main>
     </>
   )
