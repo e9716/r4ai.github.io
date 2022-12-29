@@ -1,15 +1,4 @@
-import {
-  Container,
-  Divider,
-  Heading,
-  HStack,
-  Link,
-  ListItem,
-  Spacer,
-  Text,
-  UnorderedList,
-  VStack,
-} from '@chakra-ui/react'
+import { Box, Container, Heading, Link, ListItem, Stack, Text, UnorderedList } from '@chakra-ui/react'
 import { Inter } from '@next/font/google'
 import Head from 'next/head'
 import NextLink from 'next/link'
@@ -29,62 +18,54 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <HStack>
-          <Spacer />
-          <Container w='600px'>
-            <VStack spacing={8}>
+        <Container centerContent>
+          <Stack spacing={8}>
+            <Box>
+              <Heading as='h1'>Rai</Heading>
+              <Text as='p'>
+                I&apos;m a student at the Tokyo University of Science, majoring in Information Science.
+              </Text>
+            </Box>
+            <Box>
+              <Heading as='h2'>Programming</Heading>
               <Container>
-                <Heading as='h1'>Rai</Heading>
-                <Divider />
-                <Text as='p'>
-                  I&apos;m a student at the Tokyo University of Science, majoring in Information Science.
-                </Text>
+                <UnorderedList>
+                  <ListItem>Python</ListItem>
+                  <ListItem>Rust</ListItem>
+                  <ListItem>Typescript</ListItem>
+                </UnorderedList>
               </Container>
+            </Box>
+            <Box>
+              <Heading as='h2'>Interests</Heading>
               <Container>
-                <Heading as='h2'>Programming</Heading>
-                <Divider />
-                <Container>
-                  <UnorderedList>
-                    <ListItem>Python</ListItem>
-                    <ListItem>Rust</ListItem>
-                    <ListItem>Typescript</ListItem>
-                  </UnorderedList>
-                </Container>
+                <UnorderedList>
+                  <ListItem>Tauri</ListItem>
+                  <ListItem>WebAssembly</ListItem>
+                  <ListItem>Compiler</ListItem>
+                  <ListItem>3DCG</ListItem>
+                </UnorderedList>
               </Container>
+            </Box>
+            <Box>
+              <Heading as='h2'>Links</Heading>
               <Container>
-                <Heading as='h2'>Interests</Heading>
-                <Divider />
-                <Container>
-                  <UnorderedList>
-                    <ListItem>Tauri</ListItem>
-                    <ListItem>WebAssembly</ListItem>
-                    <ListItem>Compiler</ListItem>
-                    <ListItem>3DCG</ListItem>
-                  </UnorderedList>
-                </Container>
+                <UnorderedList>
+                  <ListItem>
+                    <Link as={NextLink} href='https://github.com/r4ai'>
+                      GitHub
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link as={NextLink} href='https://zenn.dev/t4aru'>
+                      Zenn
+                    </Link>
+                  </ListItem>
+                </UnorderedList>
               </Container>
-              <Container>
-                <Heading as='h2'>Links</Heading>
-                <Divider />
-                <Container>
-                  <UnorderedList>
-                    <ListItem>
-                      <Link as={NextLink} href='https://github.com/r4ai'>
-                        GitHub
-                      </Link>
-                    </ListItem>
-                    <ListItem>
-                      <Link as={NextLink} href='https://zenn.dev/t4aru'>
-                        Zenn
-                      </Link>
-                    </ListItem>
-                  </UnorderedList>
-                </Container>
-              </Container>
-            </VStack>
-          </Container>
-          <Spacer />
-        </HStack>
+            </Box>
+          </Stack>
+        </Container>
       </main>
     </>
   )
