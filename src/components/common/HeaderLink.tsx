@@ -3,9 +3,8 @@ import NextLink from 'next/link'
 import { FC } from 'react'
 
 export const HeaderLink: FC<LinkProps> = ({ children, ...props }) => {
-  const propsAny = props as any
   return (
-    <Link as={NextLink} {...propsAny}>
+    <Link as={NextLink} {...(props as any)}>
       {children}
     </Link>
   )

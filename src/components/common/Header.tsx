@@ -6,13 +6,12 @@ import { HeaderLink } from './HeaderLink'
 
 export const Header: FC<FlexProps> = ({ children, ...props }) => {
   const { colorMode, toggleColorMode } = useColorMode()
-  const propsAny = props as any
 
   return (
     <>
       <Flex
         bgColor={colorMode === 'light' ? 'blackAlpha.100' : 'blackAlpha.400'}
-        {...propsAny}
+        {...(props as any)}
         top={0}
         zIndex='sticky'
         position='sticky'
