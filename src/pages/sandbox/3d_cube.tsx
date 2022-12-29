@@ -53,7 +53,6 @@ export const Cube_3d: FC = () => {
             position: [0, 0, 5],
           }}
         >
-          <Rig />
           <OrbitControls />
           <ambientLight args={[0xffffff]} intensity={0.2} />
           <directionalLight position={[1, 1, 1]} intensity={0.8} />
