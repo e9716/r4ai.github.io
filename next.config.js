@@ -1,4 +1,5 @@
 const withExportImages = require('next-export-optimize-images')
+const withTM = require('next-transpile-modules')(['three'])
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,4 +10,4 @@ const nextConfig = {
   },
 }
 
-module.exports = withExportImages(nextConfig)
+module.exports = withExportImages(withTM(nextConfig))
