@@ -1,20 +1,26 @@
-import { Flex, HStack, IconButton, Spacer, useColorMode } from '@chakra-ui/react'
+import { Flex, FlexProps, HStack, IconButton, Spacer, useColorMode } from '@chakra-ui/react'
 import { FC } from 'react'
 import { FiMoon, FiSun } from 'react-icons/fi'
 
 import { HeaderLink } from './HeaderLink'
 
-interface HeaderProps {}
-
-export const Header: FC<HeaderProps> = () => {
+export const Header: FC<FlexProps> = ({ children, ...props }) => {
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (
     <>
-      <Flex bgColor='blackAlpha.100'>
+      <Flex
+        bgColor={colorMode === 'light' ? 'blackAlpha.100' : 'blackAlpha.400'}
+        {...props}
+        top={0}
+        zIndex='sticky'
+        position='sticky'
+        backdropFilter='auto'
+        backdropBlur='6px'
+      >
         <Spacer />
         <Flex w='600px'>
-          <HStack spacing={5}>
+          <HStack as='nav' spacing={5}>
             <HeaderLink href='/'>Home</HeaderLink>
             <HeaderLink href='/posts'>Blog</HeaderLink>
           </HStack>
