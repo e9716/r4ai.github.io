@@ -3,7 +3,7 @@ import type { StyleFunctionProps, Styles } from '@chakra-ui/theme-tools'
 import { mode } from '@chakra-ui/theme-tools'
 
 const config: ThemeConfig = {
-  initialColorMode: 'light',
+  initialColorMode: 'dark',
   useSystemColorMode: false,
   disableTransitionOnChange: false,
 }
