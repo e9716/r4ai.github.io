@@ -1,41 +1,21 @@
-import { Flex, FlexProps, HStack, IconButton, Spacer, useColorMode } from '@chakra-ui/react'
+import Link from 'next/link'
 import { FC } from 'react'
-import { FiMoon, FiSun } from 'react-icons/fi'
 
-import { HeaderLink } from './HeaderLink'
+import { ToggleThemeButton } from './ToggleThemeButton'
 
-export const Header: FC<FlexProps> = ({ children, ...props }) => {
-  const { colorMode, toggleColorMode } = useColorMode()
-
+export const Header: FC = () => {
   return (
-    <>
-      <Flex
-        bgColor={colorMode === 'light' ? 'blackAlpha.100' : 'blackAlpha.400'}
-        {...(props as any)}
-        top={0}
-        zIndex='sticky'
-        position='sticky'
-        backdropFilter='auto'
-        backdropBlur='6px'
-      >
-        <Spacer />
-        <Flex w='600px'>
-          <HStack as='nav' spacing={5}>
-            <HeaderLink href='/'>Home</HeaderLink>
-            <HeaderLink href='/posts'>Blog</HeaderLink>
-          </HStack>
-          <Spacer />
-          <IconButton
-            aria-label='Toggle color mode'
-            variant='ghost'
-            onClick={toggleColorMode}
-            icon={colorMode === 'light' ? <FiMoon /> : <FiSun />}
-          >
-            Mode
-          </IconButton>
-        </Flex>
-        <Spacer />
-      </Flex>
-    </>
+    <header className='sticky top-0 flex px-5 backdrop-blur-md dark:backdrop-brightness-75'>
+      <nav className='flex flex-none gap-4'>
+        <Link href='/' className='flex-none hover:animate-spin'>
+          Home
+        </Link>
+        <Link href='/posts' className='flex-none'>
+          Blog
+        </Link>
+      </nav>
+      <div className='grow'></div>
+      <ToggleThemeButton />
+    </header>
   )
 }

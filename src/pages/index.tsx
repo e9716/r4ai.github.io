@@ -1,69 +1,53 @@
-import { Box, Container, Heading, Link, ListItem, Stack, Text, UnorderedList } from '@chakra-ui/react'
 import { Inter } from '@next/font/google'
-import NextLink from 'next/link'
+import Image from 'next/image'
+import Link from 'next/link'
 
-import { Head } from '@/components/common/Head'
-import { Header } from '@/components/common/Header'
+import { Layout } from '@/components/layouts/Layout'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <>
-      <Head title='About me' description='About me' />
-      <Header />
-      <main>
-        <Container centerContent>
-          <Stack spacing={8}>
-            <Box>
-              <Heading as='h1' pb={2}>
-                Rai
-              </Heading>
-              <Text as='p'>
-                I&apos;m a student at the Tokyo University of Science, majoring in Information Science.
-              </Text>
-            </Box>
-            <Box>
-              <Heading as='h2' pb={2}>
-                Programming
-              </Heading>
-              <UnorderedList pl={2}>
-                <ListItem>Python</ListItem>
-                <ListItem>Rust</ListItem>
-                <ListItem>Typescript</ListItem>
-              </UnorderedList>
-            </Box>
-            <Box>
-              <Heading as='h2' pb={2}>
-                Interests
-              </Heading>
-              <UnorderedList pl={2}>
-                <ListItem>Tauri</ListItem>
-                <ListItem>WebAssembly</ListItem>
-                <ListItem>Compiler</ListItem>
-                <ListItem>3DCG</ListItem>
-              </UnorderedList>
-            </Box>
-            <Box>
-              <Heading as='h2' pb={2}>
-                Links
-              </Heading>
-              <UnorderedList pl={2}>
-                <ListItem>
-                  <Link as={NextLink} href='https://github.com/r4ai'>
-                    GitHub
-                  </Link>
-                </ListItem>
-                <ListItem>
-                  <Link as={NextLink} href='https://zenn.dev/t4aru'>
-                    Zenn
-                  </Link>
-                </ListItem>
-              </UnorderedList>
-            </Box>
-          </Stack>
-        </Container>
-      </main>
+      <Layout title='About me' description='About me' className='container mx-auto flex max-w-lg flex-col gap-12 py-4'>
+        <section>
+          <Image priority src='/images/profile.jpg' alt='' width={144} height={144} className='rounded-full pb-2' />
+          <h2 className='pb-2 text-5xl font-black'>Rai</h2>
+          <p className='text-lg font-semibold'>とある情報系大学生。</p>
+        </section>
+        <section>
+          <h2 className='pb-4 text-3xl font-black'>
+            Favorite <br />
+            programming languages
+          </h2>
+          <ul className='list-inside list-disc text-lg font-semibold'>
+            <li>Python</li>
+            <li>Rust</li>
+            <li>Typescript</li>
+          </ul>
+        </section>
+        <section>
+          <h2 className='pb-2 text-3xl font-black'>Interests</h2>
+          <ul className='list-inside list-disc text-lg font-semibold'>
+            <li>Game Programming</li>
+            <li>3DCG</li>
+            <li>Compiler</li>
+            <li>WebAssembly</li>
+            <li>Tauri</li>
+          </ul>
+        </section>
+        <section>
+          <h2 className='pb-2 text-3xl font-black'>Links</h2>
+          <ul className='list-inside list-disc text-lg font-semibold'>
+            <li>
+              <Link href='https://github.com/r4ai'>GitHub</Link>
+            </li>
+            <li>
+              <Link href='https://zenn.dev/t4aru'>Zenn</Link>
+            </li>
+          </ul>
+        </section>
+      </Layout>
     </>
   )
 }

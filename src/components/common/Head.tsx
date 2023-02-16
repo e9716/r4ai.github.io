@@ -1,7 +1,7 @@
 import NextHead from 'next/head'
 import { FC } from 'react'
 
-interface HeadProps {
+export interface HeadProps {
   title: string
   description: string
   lang?: 'ja' | 'en'

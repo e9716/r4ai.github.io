@@ -1,4 +1,11 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+for arg in "$@"; do
+  if [ "$arg" == "--amend" ]; then
+    echo "引数で--amendが見つかったため、huskyのpre-commitのコマンドを実行しません"
+    return
+  fi
+done
+
 yarn lint-staged
