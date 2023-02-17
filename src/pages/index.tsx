@@ -9,7 +9,11 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
-      <Layout title='About me' description='About me' className='container mx-auto flex max-w-lg flex-col gap-12 py-4'>
+      <Layout
+        title='About me'
+        description='About me'
+        className='container mx-auto flex max-w-lg flex-col gap-12 py-4 px-4'
+      >
         <section>
           <Image priority src='/images/profile.jpg' alt='' width={144} height={144} className='rounded-full pb-2' />
           <h2 className='pb-2 text-5xl font-black'>Rai</h2>
