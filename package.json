@@ -14,7 +14,6 @@
     "licenses:save": "yarn licenses generate-disclaimer > ThirdPartyNotices.txt"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.15",
     "@next/font": "13.1.1",
     "@react-three/drei": "^9.48.2",
     "@react-three/fiber": "^8.9.1",
@@ -51,7 +50,7 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint --cache --cache-location .next/cache/eslint/ --fix",
-      "yarn format"
+      "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
     ]
   }
 }
