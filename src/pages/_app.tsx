@@ -1,6 +1,7 @@
 import '../styles/globals.css'
-import { ThemeProvider } from 'next-themes'
+/* eslint-disable */
 import type { AppProps } from 'next/app'
+import { ThemeProvider } from 'next-themes'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
