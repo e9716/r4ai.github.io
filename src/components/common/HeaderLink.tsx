@@ -8,7 +8,7 @@ export interface HeaderLinkProps {
 
 export const HeaderLink: FC<HeaderLinkProps> = ({ href, children }) => {
   return (
-    <Link href={href} className='flex-none font-mono font-semibold'>
+    <Link href={href} className='flex-none font-mono text-lg font-semibold'>
       {children}
     </Link>
   )

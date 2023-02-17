@@ -21,7 +21,8 @@ export default function Home() {
         </section>
         <section>
           <h2 className='pb-4 text-3xl font-black'>
-            Favorite <br />
+            Favorite
+            <br />
             programming languages
           </h2>
           <ul className='list-inside list-disc font-mono text-lg font-semibold'>
