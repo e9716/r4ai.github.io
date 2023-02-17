@@ -13,14 +13,18 @@ export default function Home() {
         <section>
           <Image priority src='/images/profile.jpg' alt='' width={144} height={144} className='rounded-full pb-2' />
           <h2 className='pb-2 text-5xl font-black'>Rai</h2>
-          <p className='text-lg font-semibold'>とある情報系大学生。</p>
+          <p className='font-mono text-lg font-semibold'>
+            とある情報系大学生。
+            <br />
+            最近は Rust でのゲーム開発に興味があります。
+          </p>
         </section>
         <section>
           <h2 className='pb-4 text-3xl font-black'>
             Favorite <br />
             programming languages
           </h2>
-          <ul className='list-inside list-disc text-lg font-semibold'>
+          <ul className='list-inside list-disc font-mono text-lg font-semibold'>
             <li>Python</li>
             <li>Rust</li>
             <li>Typescript</li>
@@ -28,7 +32,7 @@ export default function Home() {
         </section>
         <section>
           <h2 className='pb-2 text-3xl font-black'>Interests</h2>
-          <ul className='list-inside list-disc text-lg font-semibold'>
+          <ul className='list-inside list-disc font-mono text-lg font-semibold'>
             <li>Game Programming</li>
             <li>3DCG</li>
             <li>Compiler</li>
@@ -38,7 +42,7 @@ export default function Home() {
         </section>
         <section>
           <h2 className='pb-2 text-3xl font-black'>Links</h2>
-          <ul className='list-inside list-disc text-lg font-semibold'>
+          <ul className='list-inside list-disc font-mono text-lg font-semibold'>
             <li>
               <Link href='https://github.com/r4ai'>GitHub</Link>
             </li>

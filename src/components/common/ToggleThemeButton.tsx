@@ -1,22 +1,21 @@
 import { useTheme } from 'next-themes'
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import { FiMoon, FiSun } from 'react-icons/fi'
 
-export const ToggleThemeButton: FC = () => {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+interface ToggleThemeButtonProps {
+  className?: string
+}
 
-  useEffect(() => {
-    setMounted((prev) => !prev)
-  }, [])
+export const ToggleThemeButton: FC<ToggleThemeButtonProps> = ({ className }) => {
+  const { theme, setTheme } = useTheme()
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
   }
 
   return (
-    <button aria-label='toggle color mode' type='button' onClick={toggleTheme}>
-      {mounted && theme === 'dark' ? <FiSun /> : <FiMoon />}
+    <button aria-label='toggle color mode' type='button' onClick={toggleTheme} className={className}>
+      {theme === 'dark' ? <FiSun /> : <FiMoon />}
     </button>
   )
 }
