@@ -1,42 +1,17 @@
-import { Flex, FlexProps, HStack, IconButton, Spacer, useColorMode } from '@chakra-ui/react'
 import { FC } from 'react'
-import { FiMoon, FiSun } from 'react-icons/fi'
 
 import { HeaderLink } from './HeaderLink'
+import { ToggleThemeButton } from './ToggleThemeButton'
 
-export const Header: FC<FlexProps> = ({ children, ...props }) => {
-  const { colorMode, toggleColorMode } = useColorMode()
-  const propsAny = props as any
-
+export const Header: FC = () => {
   return (
-    <>
-      <Flex
-        bgColor={colorMode === 'light' ? 'blackAlpha.100' : 'blackAlpha.400'}
-        {...propsAny}
-        top={0}
-        zIndex='sticky'
-        position='sticky'
-        backdropFilter='auto'
-        backdropBlur='6px'
-      >
-        <Spacer />
-        <Flex w='600px'>
-          <HStack as='nav' spacing={5}>
-            <HeaderLink href='/'>Home</HeaderLink>
-            <HeaderLink href='/posts'>Blog</HeaderLink>
-          </HStack>
-          <Spacer />
-          <IconButton
-            aria-label='Toggle color mode'
-            variant='ghost'
-            onClick={toggleColorMode}
-            icon={colorMode === 'light' ? <FiMoon /> : <FiSun />}
-          >
-            Mode
-          </IconButton>
-        </Flex>
-        <Spacer />
-      </Flex>
-    </>
+    <header className='sticky top-0 flex h-8 px-5 backdrop-blur-md dark:backdrop-brightness-75'>
+      <nav className='self-centefont flex flex-none gap-4'>
+        <HeaderLink href='/'>Home</HeaderLink>
+        <HeaderLink href='/posts'>Blog</HeaderLink>
+      </nav>
+      <div className='grow'></div>
+      <ToggleThemeButton className='self-center' />
+    </header>
   )
 }

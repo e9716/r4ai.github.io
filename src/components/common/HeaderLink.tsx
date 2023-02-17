@@ -1,11 +1,14 @@
-import { Link, LinkProps } from '@chakra-ui/react'
-import NextLink from 'next/link'
-import { FC } from 'react'
+import Link from 'next/link'
+import { FC, ReactNode } from 'react'
 
-export const HeaderLink: FC<LinkProps> = ({ children, ...props }) => {
-  const propsAny = props as any
+export interface HeaderLinkProps {
+  href: string
+  children: ReactNode
+}
+
+export const HeaderLink: FC<HeaderLinkProps> = ({ href, children }) => {
   return (
-    <Link as={NextLink} {...propsAny}>
+    <Link href={href} className='flex-none font-mono font-semibold'>
       {children}
     </Link>
   )

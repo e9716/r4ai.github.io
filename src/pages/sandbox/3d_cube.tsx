@@ -1,9 +1,10 @@
-import { Box, Container, Heading } from '@chakra-ui/react'
 import { OrbitControls } from '@react-three/drei'
 import { Canvas, type ThreeElements, useFrame } from '@react-three/fiber'
 import { FC, useRef, useState } from 'react'
 import { Vector3 } from 'three'
 import type { Mesh } from 'three'
+
+import { Layout } from '@/components/layouts/Layout'
 
 function Rig({ v = new Vector3() }) {
   return useFrame((state) => {
@@ -41,25 +42,23 @@ const Cube: FC = (props: ThreeElements['mesh']) => {
 export const Cube_3d: FC = () => {
   return (
     <>
-      <Container centerContent>
-        <Heading>Hello, 3d!</Heading>
-      </Container>
-      <Box>
-        <Canvas
-          camera={{
-            fov: 45,
-            near: 0.1,
-            far: 1000,
-            position: [0, 0, 5],
-          }}
-        >
-          <Rig />
-          <OrbitControls />
-          <ambientLight args={[0xffffff]} intensity={0.2} />
-          <directionalLight position={[1, 1, 1]} intensity={0.8} />
-          <Cube />
-        </Canvas>
-      </Box>
+      <Layout title='3d cube' description='3d cube' className=''>
+        <div>
+          <Canvas
+            camera={{
+              fov: 45,
+              near: 0.1,
+              far: 1000,
+              position: [0, 0, 5],
+            }}
+          >
+            <OrbitControls />
+            <ambientLight args={[0xffffff]} intensity={0.2} />
+            <directionalLight position={[1, 1, 1]} intensity={0.8} />
+            <Cube />
+          </Canvas>
+        </div>
+      </Layout>
     </>
   )
 }
