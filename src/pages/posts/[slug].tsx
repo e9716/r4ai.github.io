@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { type MDXRemoteSerializeResult, MDXRemote } from 'next-mdx-remote'
 import { FC } from 'react'
 
+import { Date } from '@/components/common/Date'
 import { Layout } from '@/components/layouts/Layout'
 import { getAllPostSlugs, getPostData, postFrontMatterType } from '@/lib/posts'
 
@@ -31,6 +32,11 @@ const Post: FC<PostProps> = ({ source, frontMatter }) => {
   return (
     <Layout title={frontMatter.title} description={frontMatter.description}>
       <article className='prose prose-zinc mx-auto mt-6 max-w-2xl px-2 dark:prose-invert'>
+        <section className='mx-auto mb-8 flex flex-col items-center gap-2'>
+          <h1 className='mb-0 text-4xl'>{frontMatter.title}</h1>
+          <p className='m-0 mt-2'>{frontMatter.description}</p>
+          <Date dateString={frontMatter.date} />
+        </section>
         <MDXRemote {...source} components={components} />
       </article>
     </Layout>
