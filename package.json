@@ -19,6 +19,7 @@
     "@next/font": "13.1.1",
     "@react-three/drei": "^9.65.5",
     "@react-three/fiber": "^8.12.2",
+    "date-fns": "^2.29.3",
     "framer-motion": "^6.5.1",
     "gray-matter": "^4.0.3",
     "mdx-prism": "^0.3.4",

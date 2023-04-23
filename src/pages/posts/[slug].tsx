@@ -6,28 +6,21 @@ import { type MDXRemoteSerializeResult, MDXRemote } from 'next-mdx-remote'
 import { FC } from 'react'
 
 import { Layout } from '@/components/layouts/Layout'
-import { getPostData, postFilePaths } from '@/lib/posts'
+import { getAllPostSlugs, getPostData, postFrontMatterType } from '@/lib/posts'
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { source, frontMatter } = await getPostData(params?.slug)
+  const { source, frontMatter } = await getPostData(params?.slug as string)
 
   return { props: { source, frontMatter } }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = postFilePaths.map((path) => path.replace(/\.mdx?$/, '')).map((slug) => ({ params: { slug } }))
+  const paths = getAllPostSlugs()
 
   return { paths, fallback: false }
 }
 
 const components = { Head, Image, Link }
-
-interface postFrontMatterType {
-  title: string
-  date: string
-  description: string
-  slug: string
-}
 
 interface PostProps {
   source: MDXRemoteSerializeResult
@@ -37,7 +30,7 @@ interface PostProps {
 const Post: FC<PostProps> = ({ source, frontMatter }) => {
   return (
     <Layout title={frontMatter.title} description={frontMatter.description}>
-      <article className='prose prose-zinc mx-auto mt-6 max-w-3xl px-2 dark:prose-invert'>
+      <article className='prose prose-zinc mx-auto mt-6 max-w-2xl px-2 dark:prose-invert'>
         <MDXRemote {...source} components={components} />
       </article>
     </Layout>

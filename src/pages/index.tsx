@@ -9,7 +9,7 @@ export default function Home() {
       <Layout
         title='About me'
         description='About me'
-        className='container mx-auto flex max-w-lg flex-col gap-12 px-4 py-4 transition-colors duration-1000'
+        className='container mx-auto flex max-w-lg flex-col gap-12 px-4 py-4'
       >
         <section>
           <Image priority src='/images/profile.jpg' alt='' width={144} height={144} className='rounded-full pb-2' />
@@ -46,10 +46,14 @@ export default function Home() {
           <h2 className='pb-2 text-3xl font-black'>Links</h2>
           <ul className='list-inside list-disc text-lg font-semibold'>
             <li>
-              <Link href='https://github.com/r4ai'>GitHub</Link>
+              <Link href='https://github.com/r4ai' className='underlineAnimation link'>
+                GitHub
+              </Link>
             </li>
             <li>
-              <Link href='https://zenn.dev/t4aru'>Zenn</Link>
+              <Link href='https://zenn.dev/t4aru' className='underlineAnimation link'>
+                Zenn
+              </Link>
             </li>
           </ul>
         </section>
