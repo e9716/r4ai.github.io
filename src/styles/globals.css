@@ -9,6 +9,25 @@
 
 html,
 body,
-div#__next {
+div#__next,
+div#__next > div {
   height: 100%;
+}
+
+.link {
+  @apply text-black/100 hover:text-black/80 dark:text-white/100 dark:hover:text-white/80;
+}
+
+.underlineAnimation {
+  @apply relative inline-block;
+}
+
+.underlineAnimation::after {
+  content: '';
+  @apply absolute bottom-0 left-0 -z-10 h-0.5 w-full;
+  @apply origin-bottom-right scale-0 bg-sky-600 transition duration-300 ease-out;
+}
+
+.underlineAnimation:hover::after {
+  @apply origin-bottom-left scale-100;
 }

@@ -1,0 +1,74 @@
+---
+title: '[python] pathlib の使い方'
+date: '2023-04-24'
+description: 'pathlib の使い方'
+---
+
+# 基本的な使い方
+
+```py
+from pathlib import Path
+
+cwd_path = Path('.')  # >>> PosixPath('.')
+relative_path = Path("scripts") / "python" / "util.py"  # >>> PosixPath('scripts/python/util.py')
+absolute_path = Path("/etc") / "init.d" / "reboot"  # >>> PosixPath('/etc/init.d/reboot')
+```
+
+# 一覧
+
+以降のサンプルコードでは、次の変数`p`を使う。
+
+```py
+p = Path('tests') / 'python' / 'pathlib.py'
+# >>> PosixPath('tests/python/pathlib.py')
+```
+
+## PurePath
+
+`pathliib`列での`p`は`PurePath`を表すものとする。
+
+### 変換
+
+| 意味                                      | `pathlib`      | サンプルコード                                                                                                                                               | Link                                                                                |
+| ----------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| `/`を使用したパスを<br />表す文字列を返す | `p.as_posix()` | `Path('c:\\windows').as_posix()` <br /> `>>> 'c/windows'`                                                                                                    | [link](https://docs.python.org/ja/3/library/pathlib.html#pathlib.PurePath.as_posix) |
+| file URI で表したパスを返す。             | `p.as_uri()`   | `Path('/etc/passwd').as_uri()` <br /> `>>> 'file:///etc/passwd'` <br /> `p.as_uri()` <br /> `>>> ValueError: relative path can't be expressed as a file URI` | [link](https://docs.python.org/ja/3/library/pathlib.html#pathlib.PurePath.as_uri)   |
+
+### ディレクトリ
+
+| 意味                                         | `pathlib`   | サンプルコード                                                                                                                                |
+| -------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| 構成要素へのアクセス                         | `p.parts`   | `p.parts` <br /> `>>> ('tests', 'python', 'pathlib.py')`                                                                                      |
+| ドライブを取得                               | `p.drive`   | `Path('c:/Program Files/').drive` <br /> `>>> 'c:'`                                                                                           |
+| ルートを表す文字列を取得                     | `p.root`    | `Path('/etc/passwd').root` <br /> `>>> '/'`                                                                                                   |
+| ドライブとルートを結合した<br />文字列を取得 | `p.anchor`  | `Path('c:/Program Files/').anchor` <br /> `>>> 'c:\\'` <br /> `Path('/etc/passwd').anchor` <br /> `>>> '/'` <br /> `p.anchor` <br /> `>>> ''` |
+| 親要素たちを取得                             | `p.parents` | `map(str, p.parents)` <br /> `>>> ['tests/python', 'tests', '.']`                                                                             |
+| 親(1 個上の階層の Path)を取得                | `p.parent`  | `p.parent` <br /> `>>> PosixPath('tests/python')`                                                                                             |
+
+### ファイル
+
+| 意味                                 | `pathlib`    | サンプルコード                                                                                            |
+| ------------------------------------ | ------------ | --------------------------------------------------------------------------------------------------------- |
+| パス要素の末尾の文字列を取得         | `p.name`     | `p.name` <br /> `>>> 'pathlib.py'` <br /> `Path('tests/fuga_dir/hoge_dir/').name` <br /> `>>> 'hoge_dir'` |
+| ファイルの拡張子を取得               | `p.suffix`   | `p.suffix` <br /> `>>> '.py'`                                                                             |
+| ファイルの拡張子のリストを取得       | `p.suffixes` | `Path(lib/mylib.tar.gz).suffixes` <br /> `>>> ['.tar', '.gz']`                                            |
+| `p.name`から拡張子を除いたものを取得 | `p.stem`     | `p.stem` <br /> `>>> 'pathlib'`                                                                           |
+
+### 確認系
+
+| 意味                                          | `pathlib`                  | サンプルコード                                        | Doc                                                                                       |
+| --------------------------------------------- | -------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| パスが絶対パスかどうか                        | `p.is_absolute()`          | `p.is_absolute()` <br /> `>>> False`                  | [link](https://docs.python.org/ja/3/library/pathlib.html#pathlib.PurePath.is_absolute)    |
+| パスが`other`に対して相対かどうか             | `p.is_relative_to(*other)` | `p.is_relative_to('tests')` <br /> `>>> True`         | [link](https://docs.python.org/ja/3/library/pathlib.html#pathlib.PurePath.is_relative_to) |
+| パスが Windows 上で<br />予約されてるかどうか | `p.is_reserved()`          | `p.is_reserved()` <br /> `>>> True             False` | [link](https://docs.python.org/ja/3/library/pathlib.html#pathlib.PurePath.is_reserved)    |
+
+# Path
+
+https://docs.python.org/ja/3/library/pathlib.html#methods
+
+# 参考文献
+
+- 「pathlib --- オブジェクト指向のファイルシステムパス」、Python 3.11.0b5 ドキュメント、2022-12-30 最終閲覧、
+  https://docs.python.org/ja/3/library/pathlib.html
+- 「［Python 入門］pathlib.Path クラスによるパス操作」、＠IT、2022-12-30 最終閲覧、
+  https://atmarkit.itmedia.co.jp/ait/articles/1910/29/news019_2.html

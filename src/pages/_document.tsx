@@ -14,7 +14,7 @@ export default function Document() {
         <meta name='theme-color' media='(prefers-color-scheme: dark)' content='#000' />
         <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
       </Head>
-      <body className='dark:bg-zinc-900'>
+      <body className='transition-colors duration-500 dark:bg-zinc-900'>
         <Main />
         <NextScript />
       </body>

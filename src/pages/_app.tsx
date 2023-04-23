@@ -1,4 +1,6 @@
-import '../styles/globals.css'
+import '@/styles/globals.css'
+import '@/styles/post.css'
+
 /* eslint-disable */
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
@@ -46,7 +48,7 @@ const hackgen35 = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute='class' defaultTheme='dark'>
+    <ThemeProvider attribute='class' defaultTheme='system'>
       <div className={`${hackgen.variable} ${hackgen35.variable} ${noto_serif_jp.variable}`}>
         <Component {...pageProps} />
       </div>
