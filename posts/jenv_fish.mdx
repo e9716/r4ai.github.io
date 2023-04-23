@@ -1,0 +1,49 @@
+# ubuntu と fish shell で jenv を使って java のバージョンを管理する
+
+## 導入
+
+### インストール
+
+```bash
+$ git clone https://github.com/jenv/jenv.git ~/.jenv
+```
+
+### 設定
+
+```bash
+$ fish_add_path ~/.jenv/bin
+$ echo 'status --is-interactive; and jenv init - | source' >> ~/.config/fish/config.fish
+$ cp ~/.jenv/fish/jenv.fish ~/.config/fish/functions/jenv.fish
+```
+
+## 使い方
+
+- java のバージョンをインストールする
+
+  ```bash
+  $ sudo apt install openjdk-17-jdk
+  ```
+
+- java のバージョンを登録する
+
+  ```bash
+  $ jenv add /usr/lib/jvm/java-17-openjdk-amd64
+  ```
+
+- java のバージョンを確認する
+
+  ```bash
+  $ jenv versions
+  ```
+
+- java のバージョンを 17 に切り替える(グローバル)
+
+  ```bash
+  $ jenv global 17
+  ```
+
+- java のバージョンを 17 に切り替える(現在のディレクトリ下でのみ)
+
+  ```bash
+  $ jenv local 17
+  ```

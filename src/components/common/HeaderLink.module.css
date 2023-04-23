@@ -1,0 +1,13 @@
+.underlineAnimation {
+  @apply relative inline-block;
+}
+
+.underlineAnimation::after {
+  content: '';
+  @apply absolute bottom-0 left-0 h-0.5 w-full;
+  @apply origin-bottom-right scale-0 bg-lime-500 transition duration-300 ease-out;
+}
+
+.underlineAnimation:hover::after {
+  @apply origin-bottom-left scale-100;
+}

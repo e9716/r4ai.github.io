@@ -6,7 +6,7 @@ import { Header } from '../common/Header'
 
 type LayoutProps = {
   children: ReactNode
-  className: string
+  className?: string
 } & HeadProps
 
 export const Layout: FC<LayoutProps> = ({ title, description, lang, children, className }) => {
