@@ -47,6 +47,9 @@ jobs:
             echo "Unable to determine packager manager"
             exit 1
           fi
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6.32.9
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -71,7 +74,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        run: pnpm i --frozen-lockfile
       - name: Build with Next.js & Export Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} export
       - name: Upload artifact
