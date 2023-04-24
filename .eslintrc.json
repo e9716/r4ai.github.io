@@ -4,9 +4,14 @@
     "plugin:import/recommended",
     "plugin:import/warnings",
     "prettier",
+    "plugin:mdx/recommended",
     "plugin:jsx-a11y/recommended"
   ],
   "plugins": ["react-hooks", "jsx-a11y", "import", "unused-imports"],
+  "settings": {
+    "mdx/code-blocks": true,
+    "mdx/language-mapper": {}
+  },
   "rules": {
     "import/order": [
       "error",

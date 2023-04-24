@@ -2,21 +2,22 @@ import Link from 'next/link'
 import { FC } from 'react'
 
 import { Layout } from '@/components/layouts/Layout'
-import { worksFilePaths } from '@/lib/works'
+import { SortedWorksDataType, getSortedWorksData } from '@/lib/works'
 
-export function getStaticProps() {
+export async function getStaticProps() {
+  const allWorksData = await getSortedWorksData()
   return {
     props: {
-      worksFilePaths,
+      allWorksData,
     },
   }
 }
 
 interface Props {
-  worksFilePaths: string[]
+  allWorksData: SortedWorksDataType[]
 }
 
-const Works: FC<Props> = ({ worksFilePaths }) => {
+const Works: FC<Props> = ({ allWorksData }) => {
   return (
     <Layout
       title='works'
@@ -27,10 +28,14 @@ const Works: FC<Props> = ({ worksFilePaths }) => {
         <h1 className='pb-2 text-4xl font-black'>Works</h1>
       </section>
       <section>
-        {worksFilePaths.map((path: string) => (
-          <Link key={path} href={`/works/${path.split('.')[0]}`}>
-            <p>{path.split('.')[0]}</p>
-          </Link>
+        {allWorksData.map(({ slug, frontMatter: { title, description, date } }) => (
+          <article key={slug} className='flex flex-col gap-2'>
+            <Link href={`/works/${slug}`} className='underlineAnimation link'>
+              <h2 className='text-2xl font-semibold'>{title}</h2>
+            </Link>
+            <p className='text-gray-500'>{description}</p>
+            <small className='text-gray-500'>{date}</small>
+          </article>
         ))}
       </section>
     </Layout>
