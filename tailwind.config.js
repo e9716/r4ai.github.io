@@ -10,7 +10,6 @@ module.exports = {
       fontFamily: {
         mono: ['var(--font-hackgen)', ...defaultTheme.fontFamily.mono],
         serifjp: ['var(--font-noto-serif-jp)'],
-        hackgen35: ['var(--font-hackgen35)'],
       },
     },
   },
