@@ -31,7 +31,11 @@ export const ToggleThemeButton: FC<ToggleThemeButtonProps> = ({ className }) => 
       className={`rounded-lg p-1.5 transition duration-200 hover:bg-black/10 dark:hover:bg-white/10 ${className} `}
     >
       <div className='duration-500 hover:rotate-12 hover:scale-110 hover:text-violet-500 dark:hover:text-amber-300'>
-        {theme === 'dark' ? <SunIcon className='h-6 w-6' /> : <MoonIcon className='h-5 w-5' />}
+        {theme === 'dark' ? (
+          <SunIcon className='h-7 w-7 sm:h-6 sm:w-6' />
+        ) : (
+          <MoonIcon className='h-7 w-7 sm:h-6 sm:w-6' />
+        )}
       </div>
     </button>
   )

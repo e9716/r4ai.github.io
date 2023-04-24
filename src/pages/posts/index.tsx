@@ -20,12 +20,12 @@ export interface FCPosts {
 
 const Posts: FC<FCPosts> = ({ allPostsData }) => {
   return (
-    <Layout title='Posts' description='posts list' className='container mx-auto max-w-xl px-2'>
-      <section>
-        <h1 className='text-4xl font-bold'>Posts</h1>
+    <Layout title='Posts' description='posts list' className='container mx-auto max-w-xl px-4'>
+      <section className='my-4 flex flex-col gap-1'>
+        <h1 className='text-4xl font-black'>Posts</h1>
         <p className='text-gray-500'>All posts</p>
       </section>
-      <section className='mt-6'>
+      <section className='my-6'>
         <ul className='flex flex-col gap-2 text-lg font-semibold'>
           {allPostsData.map(({ slug, frontMatter: { title, date } }) => (
             <li key={slug}>
