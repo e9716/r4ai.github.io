@@ -2,11 +2,8 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeCodeTitles from 'rehype-code-titles'
-import rehypePrism from 'rehype-prism-plus'
-import rehypeSlug from 'rehype-slug'
-import remarkGfm from 'remark-gfm'
+
+import { MDX_OPTIONS, POSTS_DIR_PATH } from './constants'
 
 export interface postFrontMatterType {
   title: string
@@ -26,11 +23,6 @@ export function isPostFrontMatterType(data: unknown): data is postFrontMatterTyp
     typeof data.description === 'string'
   )
 }
-
-/*
-  /posts directory path
- */
-export const POSTS_DIR_PATH = path.join(process.cwd(), 'posts')
 
 /*
   /posts.{md,mdx} file names with extension
@@ -58,23 +50,7 @@ export async function getPostData(slug: string) {
   const { content, data } = matter(fileContents)
 
   const source = await serialize(content, {
-    mdxOptions: {
-      remarkPlugins: [remarkGfm],
-      rehypePlugins: [
-        rehypeSlug,
-        rehypeCodeTitles,
-        rehypePrism,
-        [
-          rehypeAutolinkHeadings,
-          {
-            properties: {
-              className: ['anchor'],
-            },
-          },
-        ],
-      ],
-      format: 'mdx',
-    },
+    mdxOptions: MDX_OPTIONS,
     scope: data,
   })
 

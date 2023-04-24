@@ -14,11 +14,6 @@ const hackgen = localFont({
       weight: '400',
       style: 'normal',
     },
-    {
-      path: './fonts/HackGen/HackGen-Bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
   ],
   variable: '--font-hackgen',
 })

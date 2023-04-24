@@ -22,7 +22,7 @@
     hyphens: none;
   }
 
-  code[class*='language-'] {
+  /* code[class*='language-'] {
     counter-reset: line-number;
   }
 
@@ -34,7 +34,7 @@
   code[class*='language-'] span::marker {
     @apply text-zinc-600;
     content: counter(line-number);
-  }
+  } */
 
   code[class*='language-']::-moz-selection,
   pre[class*='language-']::-moz-selection,

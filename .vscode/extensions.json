@@ -1,3 +1,8 @@
 {
-  "recommendations": ["styled-components.vscode-styled-components", "eliostruyf.vscode-typescript-exportallmodules"]
+  "recommendations": [
+    "styled-components.vscode-styled-components",
+    "eliostruyf.vscode-typescript-exportallmodules",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ]
 }
