@@ -34,5 +34,6 @@
       }
     ],
     "unused-imports/no-unused-imports": "error"
-  }
+  },
+  "ignorePatterns": [".next/**", "node_modules/**", "out/**", "public/**"]
 }

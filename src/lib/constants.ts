@@ -1,3 +1,4 @@
+import fs from 'fs'
 /* eslint-disable-next-line import/no-unresolved */
 import { SerializeOptions } from 'next-mdx-remote/dist/types'
 import path from 'path'
@@ -7,8 +8,9 @@ import rehypePrism from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
-export const POSTS_DIR_PATH = path.join(process.cwd(), 'posts')
-export const WORKS_DIR_PATH = path.join(process.cwd(), 'works')
+export const DATA_DIR_PATH = path.join(process.cwd(), 'data')
+export const POSTS_DIR_PATH = path.join(DATA_DIR_PATH, 'posts')
+export const WORKS_DIR_PATH = path.join(DATA_DIR_PATH, 'works')
 export const { mdxOptions: MDX_OPTIONS }: SerializeOptions = {
   mdxOptions: {
     remarkPlugins: [remarkGfm],
@@ -28,3 +30,8 @@ export const { mdxOptions: MDX_OPTIONS }: SerializeOptions = {
     format: 'mdx',
   },
 }
+
+export type Tags = {
+  [key: string]: string
+}
+export const TAGS_COLOR_TABLE = JSON.parse(fs.readFileSync(path.join(DATA_DIR_PATH, 'tags.json'), 'utf-8')) as Tags

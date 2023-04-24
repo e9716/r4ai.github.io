@@ -9,10 +9,9 @@
     "start": "next start",
     "export": "next build && next export && next-export-optimize-images",
     "lint": "next lint --dir src",
-    "lint:fix": "yarn lint --fix",
+    "lint:fix": "pnpm lint --fix",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
-    "prepare": "husky install",
-    "licenses:save": "yarn licenses generate-disclaimer > ThirdPartyNotices.txt"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.17",
@@ -53,7 +52,6 @@
     "next-transpile-modules": "^10.0.0",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.2.7",
     "rehype": "^12.0.1",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-code-titles": "^1.2.0",
