@@ -5,14 +5,7 @@ import '@/styles/post.css'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
 
-import { Noto_Serif_JP } from 'next/font/google'
 import localFont from 'next/font/local'
-
-const noto_serif_jp = Noto_Serif_JP({
-  subsets: ['latin'],
-  weight: ['200', '300', '400', '500', '600', '700', '900'],
-  variable: '--font-noto-serif-jp',
-})
 
 const hackgen = localFont({
   src: [
@@ -33,7 +26,7 @@ const hackgen = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute='class' defaultTheme='system'>
-      <div className={`${hackgen.variable} ${noto_serif_jp.variable}`}>
+      <div className={`${hackgen.variable}`}>
         <Component {...pageProps} />
       </div>
     </ThemeProvider>
