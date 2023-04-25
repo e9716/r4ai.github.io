@@ -52,7 +52,7 @@ const Works: FC<Props> = ({ allWorksData, tags }) => {
         <h1 className='text-4xl font-black'>Works</h1>
         <p className='text-base text-gray-500'>Applications, software, games, etc. developed by me.</p>
       </section>
-      <section className='mx-auto w-full max-w-3xl'>
+      <section className='mx-auto w-full max-w-3xl flex flex-col gap-8'>
         {allWorksData.map(({ slug, frontMatter: { title, description, date, image, github, tags } }) => (
           <div key={slug}>
             <div className={`h-96 gap-2 rounded-2xl ${style.card} `}>

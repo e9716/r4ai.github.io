@@ -2,5 +2,4 @@
   display: grid;
   grid-template-columns: 60% 40%;
   grid-template-rows: 1fr;
-  color: antiquewhite;
 }

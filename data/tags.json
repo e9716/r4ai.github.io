@@ -1,4 +1,6 @@
 {
-  "svelte": "#ff6822",
-  "tauri": "#24c8db"
+  "Svelte": "#ff6822",
+  "Tauri": "#24c8db",
+  "Tailwindcss": "#06b6d4",
+  "Next.js": "#419df3"
 }
