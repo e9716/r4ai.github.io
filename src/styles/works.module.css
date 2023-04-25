@@ -1,5 +1,12 @@
 .card {
   display: grid;
-  grid-template-columns: 55% 45%;
-  grid-template-rows: 1fr;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+}
+
+@media screen(sm) {
+  .card {
+    grid-template-columns: 55% 45%;
+    grid-template-rows: 1fr;
+  }
 }

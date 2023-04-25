@@ -52,15 +52,23 @@ const Works: FC<Props> = ({ allWorksData, tags }) => {
         <h1 className='text-4xl font-black'>Works</h1>
         <p className='text-base text-gray-500'>Applications, software, games, etc. developed by me.</p>
       </section>
-      <section className='mx-auto w-full max-w-3xl flex flex-col gap-12'>
+      <section className='mx-auto w-full max-w-md sm:max-w-3xl flex flex-col gap-12'>
         {allWorksData.map(({ slug, frontMatter: { title, description, date, image, github, tags } }) => (
-          <div key={slug} className={`h-max rounded-2xl shadow-xl dark:shadow-none ${style.card} `}>
+          <div
+            key={slug}
+            className={`h-max rounded-2xl shadow-xl dark:shadow-none hover:shadow-2xl transition-shadow ${style.card} `}
+          >
             <Link href={`/works/${slug}`}>
               <div className='w-full h-full relative' style={{ aspectRatio: '3 / 2' }}>
-                <Image src={image} alt={title} fill className='object-cover rounded-l-xl dark:rounded-r-xl shadow-xl' />
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  className='object-cover sm:rounded-l-xl sm:rounded-r-none sm:dark:rounded-r-xl rounded-t-xl dark:rounded-b-xl shadow-xl'
+                />
               </div>
             </Link>
-            <div className='col-start-2 row-start-1 flex flex-col gap-3 ml-7 mr-4 my-3 text-black dark:text-white'>
+            <div className='col-start-1 h-max sm:col-start-2 row-start-2 sm:row-start-1 flex flex-col gap-3 sm:ml-7 sm:dark:ml-7 sm:m4-4 mx-4 sm:dark:mx-4 dark:mx-2 my-3 text-black dark:text-white'>
               <div>
                 <Link href={`/works/${slug}`} className='link'>
                   <h2 className='text-2xl font-semibold'>{title}</h2>
