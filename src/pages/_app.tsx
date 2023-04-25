@@ -8,13 +8,7 @@ import { ThemeProvider } from 'next-themes'
 import localFont from 'next/font/local'
 
 const hackgen = localFont({
-  src: [
-    {
-      path: './fonts/HackGen/HackGen-Regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-  ],
+  src: './fonts/HackGen/HackGen-Regular.woff2',
   variable: '--font-hackgen',
 })
 
