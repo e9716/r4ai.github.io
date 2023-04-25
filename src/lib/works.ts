@@ -9,7 +9,7 @@ export interface worksFrontMatterType {
   title: string
   date: string
   description: string
-  progress: 'working' | 'done'
+  progress: 'working' | 'maintenance' | 'done'
   tags: string[]
   image: string
   github: string
@@ -29,7 +29,7 @@ export function isWorksFrontMatterType(data: unknown): data is worksFrontMatterT
     typeof data.title === 'string' &&
     typeof data.date === 'string' &&
     typeof data.description === 'string' &&
-    (data.progress === 'working' || data.progress === 'done') &&
+    (data.progress === 'working' || data.progress === 'done' || data.progress === 'maintenance') &&
     Array.isArray(data.tags) &&
     data.tags.every((tag) => typeof tag === 'string') &&
     typeof data.github === 'string'
