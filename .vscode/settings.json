@@ -7,10 +7,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "vscode-color-picker.languages": [
-    "typescript",
-    "json",
-  ],
+  "vscode-color-picker.languages": ["typescript", "json"],
   "eslint.options": {
     "extensions": [".js", ".jsx", ".md", ".mdx", ".ts", ".tsx"]
   },
