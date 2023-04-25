@@ -54,7 +54,7 @@ const Works: FC<Props> = ({ allWorksData, tags }) => {
       </section>
       <section className='mx-auto w-full max-w-3xl flex flex-col gap-12'>
         {allWorksData.map(({ slug, frontMatter: { title, description, date, image, github, tags } }) => (
-          <div key={slug} className={`h-max rounded-2xl shadow-lg dark:shadow-none ${style.card} `}>
+          <div key={slug} className={`h-max rounded-2xl shadow-xl dark:shadow-none ${style.card} `}>
             <Link href={`/works/${slug}`}>
               <div className='w-full h-full relative' style={{ aspectRatio: '3 / 2' }}>
                 <Image src={image} alt={title} fill className='object-cover rounded-l-xl dark:rounded-r-xl shadow-xl' />
