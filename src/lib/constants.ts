@@ -1,4 +1,5 @@
 import fs from 'fs'
+import mdxMermaid from 'mdx-mermaid'
 /* eslint-disable-next-line import/no-unresolved */
 import { SerializeOptions } from 'next-mdx-remote/dist/types'
 import path from 'path'
@@ -13,7 +14,7 @@ export const POSTS_DIR_PATH = path.join(DATA_DIR_PATH, 'posts')
 export const WORKS_DIR_PATH = path.join(DATA_DIR_PATH, 'works')
 export const { mdxOptions: MDX_OPTIONS }: SerializeOptions = {
   mdxOptions: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [mdxMermaid, remarkGfm],
     rehypePlugins: [
       rehypeSlug,
       rehypeCodeTitles,
