@@ -1,4 +1,3 @@
-import { Mermaid } from 'mdx-mermaid/lib/Mermaid'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -22,7 +21,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false }
 }
 
-const components = { Head, Image, Link, Mermaid }
+const components = { Head, Image, Link }
 
 interface PostProps {
   source: MDXRemoteSerializeResult
