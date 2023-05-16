@@ -58,8 +58,8 @@ devDependencies:
     specifier: ^0.5.9
     version: 0.5.9(tailwindcss@3.3.1)
   '@types/node':
-    specifier: 18.16.9
-    version: 18.16.9
+    specifier: 18.16.10
+    version: 18.16.10
   '@types/react':
     specifier: 18.2.6
     version: 18.2.6
@@ -708,14 +708,14 @@ packages:
     dependencies:
       '@types/http-cache-semantics': 4.0.1
       '@types/keyv': 3.1.4
-      '@types/node': 18.16.9
+      '@types/node': 18.16.10
       '@types/responselike': 1.0.0
     dev: true
 
   /@types/concat-stream@2.0.0:
     resolution: {integrity: sha512-t3YCerNM7NTVjLuICZo5gYAXYoDvpuuTceCcFQWcDQz26kxUR5uIWolxbIR5jRNIXpMqhOpW/b8imCR1LEmuJw==}
     dependencies:
-      '@types/node': 18.16.9
+      '@types/node': 18.16.10
     dev: true
 
   /@types/debug@4.1.7:
@@ -773,7 +773,7 @@ packages:
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 18.16.9
+      '@types/node': 18.16.10
     dev: true
 
   /@types/mdast@3.0.11:
@@ -788,8 +788,8 @@ packages:
   /@types/ms@0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
 
-  /@types/node@18.16.9:
-    resolution: {integrity: sha512-IeB32oIV4oGArLrd7znD2rkHQ6EDCM+2Sr76dJnrHwv9OHBTTM6nuDLK9bmikXzPa0ZlWMWtRGo/Uw4mrzQedA==}
+  /@types/node@18.16.10:
+    resolution: {integrity: sha512-sMo3EngB6QkMBlB9rBe1lFdKSLqljyWPPWv6/FzSxh/IDlyVWSzE9RiF4eAuerQHybrWdqBgAGb03PM89qOasA==}
 
   /@types/offscreencanvas@2019.7.0:
     resolution: {integrity: sha512-PGcyveRIpL1XIqK8eBsmRBt76eFgtzuPiSTyKHZxnGemp2yzGzWpjYKAfK3wIMiU7eH+851yEpiuP8JZerTmWg==}
@@ -838,7 +838,7 @@ packages:
   /@types/responselike@1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 18.16.9
+      '@types/node': 18.16.10
     dev: true
 
   /@types/scheduler@0.16.3:
@@ -3547,7 +3547,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.16.9
+      '@types/node': 18.16.10
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: false
@@ -6462,7 +6462,7 @@ packages:
       '@types/concat-stream': 2.0.0
       '@types/debug': 4.1.7
       '@types/is-empty': 1.2.1
-      '@types/node': 18.16.9
+      '@types/node': 18.16.10
       '@types/unist': 2.0.6
       concat-stream: 2.0.0
       debug: 4.3.4
