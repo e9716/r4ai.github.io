@@ -7,13 +7,14 @@ import rehypeCodeTitles from 'rehype-code-titles'
 import rehypePrism from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
+import remarkMermaid from 'remark-mermaidjs'
 
 export const DATA_DIR_PATH = path.join(process.cwd(), 'data')
 export const POSTS_DIR_PATH = path.join(DATA_DIR_PATH, 'posts')
 export const WORKS_DIR_PATH = path.join(DATA_DIR_PATH, 'works')
 export const { mdxOptions: MDX_OPTIONS }: SerializeOptions = {
   mdxOptions: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, remarkMermaid],
     rehypePlugins: [
       rehypeSlug,
       rehypeCodeTitles,
