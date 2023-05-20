@@ -1,7 +1,7 @@
-import withTM from 'next-transpile-modules'
-import remarkGfm from 'remark-gfm'
 import createMDX from '@next/mdx'
 import withExportImages from 'next-export-optimize-images'
+import withTM from 'next-transpile-modules'
+import remarkGfm from 'remark-gfm'
 
 const withThree = withTM(['three'])
 

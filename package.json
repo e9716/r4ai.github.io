@@ -11,7 +11,11 @@
     "lint": "next lint --dir src",
     "lint:fix": "pnpm lint --fix",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "docker:setup": "docker-compose build",
+    "docker:dev": "docker-compose up",
+    "docker:build": "docker-compose run --rm app sh -c 'pnpm build'",
+    "docker:export": "docker-compose run --rm app sh -c 'pnpm export'"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.17",
@@ -29,7 +33,7 @@
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "remark-mermaidjs": "^5.0.1",
+    "rehype-mermaidjs": "^1.0.1",
     "three": "^0.152.0",
     "three-stdlib": "^2.21.8"
   },
