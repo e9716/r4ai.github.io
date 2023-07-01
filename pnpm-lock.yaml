@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -110,8 +110,8 @@ devDependencies:
     specifier: ^13.2.1
     version: 13.2.1
   next-export-optimize-images:
-    specifier: ^2.0.1
-    version: 2.0.1(next@13.4.4)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^3.0.0
+    version: 3.0.0(next@13.4.4)(react-dom@18.2.0)(react@18.2.0)
   next-transpile-modules:
     specifier: ^10.0.0
     version: 10.0.0
@@ -4933,12 +4933,12 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: false
 
-  /next-export-optimize-images@2.0.1(next@13.4.4)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-nqpbC69PYToyHgnrv/2u9wByRGpGgVnzODTcFU4pFsCd+rdQUJRjubsa45AItsi6p9oENNZ6hZ+fOfb13Lc4zw==}
-    engines: {node: ^16.0.0 || ^18.0.0 || ^19.0.0}
+  /next-export-optimize-images@3.0.0(next@13.4.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-A/Uu0+SbHpXg/EUApmx6WGzACRLvef4UqE7AoHM5muGDEyZr9xZlbpqe07XVmaCGuJBfVpFpaMVLJBLTtUkugw==}
+    engines: {node: '>=16.8.0'}
     hasBin: true
     peerDependencies:
-      next: ^13.2.4
+      next: ^13.3.2
       react: ^17.0.2 || ^18.0.0-0
       react-dom: ^17.0.2 || ^18.0.0-0
     dependencies:
@@ -4949,9 +4949,11 @@ packages:
       got: 11.8.6
       lodash.uniqwith: 4.5.0
       next: 13.4.4(react-dom@18.2.0)(react@18.2.0)(sass@1.62.0)
+      plugin-next-export-optimize-images: 0.1.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      sharp: 0.31.3
+      recursive-readdir: 2.2.3
+      sharp: 0.32.1
     dev: true
 
   /next-mdx-remote@4.4.1(react-dom@18.2.0)(react@18.2.0):
@@ -5039,8 +5041,8 @@ packages:
       semver: 7.5.1
     dev: true
 
-  /node-addon-api@5.1.0:
-    resolution: {integrity: sha512-eh0GgfEkpnoWDq+VY8OyvYhFEzBk6jIYbRKdIlyTiAXIVJ8PyBaKb0rp7oDtoddbdoHWhq8wwr+XZ81F1rpNdA==}
+  /node-addon-api@6.1.0:
+    resolution: {integrity: sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA==}
     dev: true
 
   /node-releases@2.0.11:
@@ -5372,6 +5374,10 @@ packages:
     resolution: {integrity: sha512-fMUY1+iR6kYbJF/EsOOqzBA99ZHXbw9sYPNjwA4X/oV0hVF/1aGlWYBGPVUEqxBkGANDKMziYoOdKGU5DIP5Gg==}
     engines: {node: '>=14'}
     dev: false
+
+  /plugin-next-export-optimize-images@0.1.0:
+    resolution: {integrity: sha512-qd/Q3jA3c55+jK2Qfn1DUbdPMfa0FiweHMwAiJ9/pDuQ6cmJyyMZu022usB2R6guK5oAWHMgk5q1LXAYX0HM5g==}
+    dev: true
 
   /postcss-calc@9.0.1(postcss@8.4.23):
     resolution: {integrity: sha512-TipgjGyzP5QzEhsOZUaIkeO5mKeMFpebWzRogWG/ysonUlnHcq5aJe0jOjpfzUU8PeSaBQnrE8ehR0QA5vs8PQ==}
@@ -5920,6 +5926,13 @@ packages:
     dependencies:
       picomatch: 2.3.1
 
+  /recursive-readdir@2.2.3:
+    resolution: {integrity: sha512-8HrF5ZsXk5FAH9dgsx3BlUer73nIhuj+9OrQwEbLTPOBzGkL1lsFCR01am+v+0m2Cmbs1nP12hLDl5FA7EszKA==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      minimatch: 3.1.2
+    dev: true
+
   /refractor@3.3.0:
     resolution: {integrity: sha512-c/jEhQjk1NDyTF3hMgtu8PigaqkWUv+c5+mBffZCTnjyrNSJkG+0eoTOJV/u0XCTuPfaFzJyj6MM4HnF0Wr27Q==}
     dependencies:
@@ -6277,14 +6290,14 @@ packages:
       randombytes: 2.1.0
     dev: false
 
-  /sharp@0.31.3:
-    resolution: {integrity: sha512-XcR4+FCLBFKw1bdB+GEhnUNXNXvnt0tDo4WsBsraKymuo/IAuPuCBVAL2wIkUw2r/dwFW5Q5+g66Kwl2dgDFVg==}
+  /sharp@0.32.1:
+    resolution: {integrity: sha512-kQTFtj7ldpUqSe8kDxoGLZc1rnMFU0AO2pqbX6pLy3b7Oj8ivJIdoKNwxHVQG2HN6XpHPJqCSM2nsma2gOXvOg==}
     engines: {node: '>=14.15.0'}
     requiresBuild: true
     dependencies:
       color: 4.2.3
       detect-libc: 2.0.1
-      node-addon-api: 5.1.0
+      node-addon-api: 6.1.0
       prebuild-install: 7.1.1
       semver: 7.5.1
       simple-get: 4.0.1
